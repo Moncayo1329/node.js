@@ -27,3 +27,13 @@
 //En Node.js, 
 //el http es un módulo incorporado que proporciona funcionalidades para crear y manejar servidores web y hacer solicitudes HTTP.
  //No necesitas instalarlo porque viene incluido con Node.js.
+
+ const http = require('http');
+
+ const server = http.createServer((req,res)=> {
+res.write('welcome to our home page');
+res.end()
+
+ })
+
+ server.listen(5000)
