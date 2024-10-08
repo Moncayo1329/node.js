@@ -28,5 +28,17 @@
 //el http es un módulo incorporado que proporciona funcionalidades para crear y manejar servidores web y hacer solicitudes HTTP.
  //No necesitas instalarlo porque viene incluido con Node.js.
 
+const {readFile} = require('fs');
 
 
+readFile('./content/first.txt','utf8',(err,data) => {
+
+if(err){
+
+    return;
+}
+else{
+    console.log(data)
+}
+
+})
