@@ -39,13 +39,22 @@
 
 // sincrono 
 
-// puedes unir rutas con path.join 
-const path = require('node:path')
+const fs = require('node:fs')
 
-// barra separadora de carpetas segun SO 
-console.log(path.sep)
+fs.readdir('.', (err,files) => {
 
-// unir rutas con path.join
-const filePath = path.join('content' , 'subfolder' , 'test.txt')
+if (err) {
 
-console.log(filePath)
+    console.error('Error al leer el directorio:', err)
+    return;
+}
+
+
+files.forEach(file => {
+console.log(file)
+
+
+})
+
+
+})
