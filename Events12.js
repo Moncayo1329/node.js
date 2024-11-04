@@ -13,3 +13,26 @@
 //once(event, listener): Registra un listener que solo se ejecutará la primera vez que ocurra el evento.
 //removeListener(event, listener): Elimina un listener específico de un evento.
 //removeAllListeners([event]): Elimina todos los listeners para un evento específico o para todos los eventos si no se especifica ninguno.
+
+// Events 
+// Event driven programming
+/// used heavily in node.js 
+
+const EventEmitter = require('events');
+
+
+const customEmitter = new EventEmitter()
+
+
+customEmitter.on('response', () => {
+
+console.log(`data recieved user ${name} with id:${id}`)
+})
+
+customEmitter.on('response', () => {
+console.log(`some other logic here`)
+
+}) 
+
+
+customEmitter.emit('response', 'john', 34)
